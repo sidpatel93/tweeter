@@ -1,0 +1,39 @@
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 120px;
+  background-color: #4056A1;
+  color: #FFFFFF;
+}
+
+.titlediv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.titlediv span{
+  margin-right: 1.5em;
+}
+
+.navlogo {
+  font-family: 'Bungee';
+  margin-left: 1.5em;
+}
+
+.navtitle {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: stretch;
+  margin-right: 1.5em;
+}
+
+.navicon {
+  color: red;
+  margin-right: 1.5em;
+}
+
