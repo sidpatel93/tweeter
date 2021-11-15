@@ -1,0 +1,39 @@
+.new-tweet {
+  flex-basis: 100%;
+  margin-top: 2em;
+}
+
+.newtweetbutton {
+  background-color: #4152a1;
+  color: white;
+  font-family: 'Bungee';
+  
+}
+
+.button-count {
+ display: flex;
+ flex-direction: row;
+ justify-content: space-between;
+ align-content: center;
+ margin-top: 0.5em;
+}
+
+#tweet-text {
+  border-top: hidden;
+  border-left: hidden;
+  border-right: hidden;
+  background: transparent;
+  border-bottom: solid black 3px ;
+  width: 100%;
+}
+
+#tweet-text:focus{
+  outline: none;
+}
+
+.counter {
+  color: black;
+  font-family: 'Bungee';
+  align-content:right;
+}
+
