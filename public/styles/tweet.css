@@ -1,0 +1,31 @@
+.tweets-section article {
+  margin-top: 1em;
+  border: solid black 3px;
+}
+
+.tweets-section article header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-basis: 90%;
+}
+
+.tweets-section article header div{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-basis: 15%;
+  align-items: center;
+  margin: 0.5em;
+}
+
+.tweets-section article header span{
+  margin-right: 1em;
+}
+
+.tweets-section article footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
