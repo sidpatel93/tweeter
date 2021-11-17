@@ -58,3 +58,13 @@
   color: #eba134 ;
   cursor: pointer;
 }
+
+.error {
+  margin: 0.75em;
+  border: solid red 4px;
+}
+
+.error p {
+  font-weight: 300;
+  color: red;
+}

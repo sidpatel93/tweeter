@@ -22,7 +22,7 @@ $(document).ready(function() {
       <span>${handle}</span>
     </header>
     <div>
-      <p>${content}</p>
+      <p>${escape(content)}</p>
     </div>
     <footer>
       <span> ${timeago.format(date)}</span>
@@ -63,13 +63,16 @@ $(document).ready(function() {
     event.preventDefault()
     var textarea = $('#tweet-text')
     var form = $('.new-tweet form')
+    var errorDiv = $(".error");
 
     if(textarea.val().length > 140) {
-      alert("Charater count exceed the max limit of 140 characters.")
+      errorDiv.html("<p> ⚠ Charater count exceed the max limit of 140 characters. ⚠ </p>")
+      errorDiv.show()
     }
 
-    else if(textarea.val().length == 0) {
-      alert("Text field can not be empty")
+    else if(textarea.val().length === 0) {
+      errorDiv.html("<p> ⚠ Text field can not be empty. ⚠ </p>")
+      errorDiv.show()
     }
 
     else {
@@ -86,5 +89,19 @@ $(document).ready(function() {
       textarea.val('');
     }
   )
+
+  $('#tweet-text').on('click', function() {
+    var errorDiv = $(".error");
+    errorDiv.hide();
+    let output = $(this).next().children("output");
+    output.val(140)
+    output.css("color","black")
+  })
+
+  const escape = function(userInput) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(userInput));
+    return div.innerHTML;
+  }
 
 })
