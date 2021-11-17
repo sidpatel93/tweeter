@@ -48,13 +48,20 @@ $(document).ready(function() {
   
   $(".new-tweet form").submit(function(event){
     event.preventDefault()
-  
-    $.ajax({
-      type: "POST",
-      url: $(this).attr("action"),
-      data: $(this).serialize()
-    })
-  
+    var textarea = $('#tweet-text')
+    var form = $('.new-tweet form')
+    if(textarea.val().length > 140 || textarea.val().length == 0){
+      alert("Charater count is not valid!")
+    }
+
+    else {
+      $.ajax({
+        type: "POST",
+        url: form.attr("action"),
+        data: form.serialize()
+      })
+    }
+    
   })
 
   const loadtweets = () => {
