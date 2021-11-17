@@ -52,6 +52,7 @@ $(document).ready(function() {
       url: "/tweets"
     })
     .then(function(data){
+      $('.tweets-section').empty()
       renderTweets(data);
     })
   }
@@ -62,27 +63,28 @@ $(document).ready(function() {
     event.preventDefault()
     var textarea = $('#tweet-text')
     var form = $('.new-tweet form')
+
     if(textarea.val().length > 140) {
       alert("Charater count exceed the max limit of 140 characters.")
     }
+
     else if(textarea.val().length == 0) {
       alert("Text field can not be empty")
     }
 
     else {
+      var dataToput = form.serialize()
       $.ajax({
         type: "POST",
         url: form.attr("action"),
-        data: form.serialize()
+        data: dataToput,
       })
-      .then(()=>{
-        
-        
-       
-      })
+      .then(function(res){
+          loadtweets();
+      })    
+      }
       textarea.val('');
     }
-    
-  })
+  )
 
 })
