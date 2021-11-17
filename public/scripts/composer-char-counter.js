@@ -9,7 +9,6 @@ $(document).ready(function() {
     let currentCount = this.value.length;
     let total = 140 - currentCount
     if(total < 0){
-      console.log("minus value")
       output.val(total)
       output.css("color","red")
     }

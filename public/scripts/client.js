@@ -50,8 +50,11 @@ $(document).ready(function() {
     event.preventDefault()
     var textarea = $('#tweet-text')
     var form = $('.new-tweet form')
-    if(textarea.val().length > 140 || textarea.val().length == 0){
-      alert("Charater count is not valid!")
+    if(textarea.val().length > 140) {
+      alert("Charater count exceed the max limit of 140 characters.")
+    }
+    else if(textarea.val().length == 0) {
+      alert("Text field can not be empty")
     }
 
     else {
