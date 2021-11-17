@@ -42,10 +42,22 @@ $(document).ready(function() {
   const renderTweets = (arrOfTweets) => {
     for(var obj of arrOfTweets){
        var newTweet = createTweetElement(obj);
-       $(".tweets-section").append(newTweet);
+       $(".tweets-section").prepend(newTweet);
     }
   }
-  
+
+  const loadtweets = () => {
+    $.ajax({
+      type: "GET",
+      url: "/tweets"
+    })
+    .then(function(data){
+      renderTweets(data);
+    })
+  }
+
+  loadtweets();
+    
   $(".new-tweet form").submit(function(event){
     event.preventDefault()
     var textarea = $('#tweet-text')
@@ -63,20 +75,14 @@ $(document).ready(function() {
         url: form.attr("action"),
         data: form.serialize()
       })
+      .then(()=>{
+        
+        
+       
+      })
+      textarea.val('');
     }
     
   })
-
-  const loadtweets = () => {
-    $.ajax({
-      type: "GET",
-      url: "/tweets"
-    })
-    .then(function(data){
-      renderTweets(data);
-    })
-  }
-
-  loadtweets();
 
 })
