@@ -1,7 +1,7 @@
 # Tweeter Project
 
-This is simple Single-page application which utilize AJAX based jQuery, HTML5 and CSS3 on client side. Backend logic is in Node.js' express framework.
-The data for this application is not persistent and stored locally. 
+This is simple Single-page application which utilize AJAX based jQuery, HTML5 and CSS3 on client side. Backend logic is in Node.js' express framework. The application layout is flexible to support large screen like desktop, tablet etc and small screen size on phone.
+New tweets will be push on the top of the screen. The data for this application is not persistent and stored locally. 
 
 ## Getting Started
 
@@ -12,7 +12,17 @@ The data for this application is not persistent and stored locally.
 
 ## Examples
 
+### Layout on the large screen size.
 
+![](https://github.com/sidpatel93/tweeter/blob/master/docs/3.png)
+
+### Layout on the small screen size.
+![](https://github.com/sidpatel93/tweeter/blob/master/docs/4.png).
+
+### Error handling as per character count limit.
+
+![](https://github.com/sidpatel93/tweeter/blob/master/docs/1.png)
+![](https://github.com/sidpatel93/tweeter/blob/master/docs/2.png)
 
 ## Dependencies
 
