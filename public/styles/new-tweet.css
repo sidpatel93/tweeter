@@ -25,6 +25,7 @@
   background: transparent;
   border-bottom: solid black 4px ;
   width: 100%;
+  margin-top: 1em;
 }
 
 #tweet-text:focus{
