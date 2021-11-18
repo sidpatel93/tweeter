@@ -7,13 +7,13 @@
 $(document).ready(function() {
   
   const createTweetElement = (tweet) => {
-    var name = tweet["user"]["name"]
-    var avatar = tweet["user"]["avatars"]
-    var handle = tweet["user"]["handle"]
-    var content = tweet["content"]["text"]
-    var date = tweet["created_at"]
+    let name = tweet["user"]["name"];
+    let avatar = tweet["user"]["avatars"];
+    let handle = tweet["user"]["handle"];
+    let content = tweet["content"]["text"];
+    let date = tweet["created_at"];
     
-    var tweetHTML = $(`<article>
+    let tweetHTML = $(`<article>
     <header>
       <div>          
         <img src=${avatar}>
@@ -32,84 +32,80 @@ $(document).ready(function() {
         <i class="fa-solid fa-heart"></i>
       </div>
     </footer>
-  </article>`)
+  </article>`);
   
-    $('.tweets-section').append(tweetHTML)
-    return tweetHTML
+    $('.tweets-section').append(tweetHTML);
+    return tweetHTML;
   
-  }
+  };
   
   const renderTweets = (arrOfTweets) => {
-    for(var obj of arrOfTweets){
-       var newTweet = createTweetElement(obj);
-       $(".tweets-section").prepend(newTweet);
+    for (let obj of arrOfTweets) {
+      let newTweet = createTweetElement(obj);
+      $(".tweets-section").prepend(newTweet);
     }
-  }
+  };
 
   const loadtweets = () => {
     $.ajax({
       type: "GET",
       url: "/tweets"
     })
-    .then(function(data){
-      $('.tweets-section').empty();
-      renderTweets(data);
-    })
-  }
+      .then(function(data) {
+        $('.tweets-section').empty();
+        renderTweets(data);
+      });
+  };
 
   loadtweets();
     
-  $(".new-tweet form").submit(function(event){
-    event.preventDefault()
-    var textarea = $('#tweet-text');
-    var outputCount = $('#tweet-text').next().children("output");
-    var form = $('.new-tweet form');
-    var errorDiv = $(".error");
+  $(".new-tweet form").submit(function(event) {
+    event.preventDefault();
+    let textarea = $('#tweet-text');
+    let outputCount = $('#tweet-text').next().children("output");
+    let form = $('.new-tweet form');
+    let errorDiv = $(".error");
 
-    if(textarea.val().length > 140) {
+    if (textarea.val().length > 140) {
       errorDiv.html("<p> ⚠ Charater count exceed the max limit of 140 characters. ⚠ </p>");
       errorDiv.show();
-    }
-
-    else if(textarea.val().length === 0) {
+    } else if (textarea.val().length === 0) {
       errorDiv.html("<p> ⚠ Text field can not be empty. ⚠ </p>");
       errorDiv.show();
-    }
-
-    else {
-      var dataToput = form.serialize()
+    } else {
+      let dataToput = form.serialize();
       $.ajax({
         type: "POST",
         url: form.attr("action"),
         data: dataToput,
       })
-      .then(function(res){
+        .then(function(res) {
           loadtweets();
-      })    
-      }
-      textarea.val('');
-      outputCount.val(140)
-
+        });
     }
-  )
+    textarea.val('');
+    outputCount.val(140);
+
+  }
+  );
 
   $('#tweet-text').on('click', function() {
-    var errorDiv = $(".error");
+    let errorDiv = $(".error");
     errorDiv.hide();
     let output = $(this).next().children("output");
     output.val(140);
     output.css("color","black");
-  })
+  });
 
   const escape = function(userInput) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(userInput));
     return div.innerHTML;
-  }
+  };
 
-  $('.navicon').on('click', function(){
-    var form = $(".new-tweet form");
+  $('.navicon').on('click', function() {
+    let form = $(".new-tweet form");
     form.show();
-  })
+  });
 
-})
+});

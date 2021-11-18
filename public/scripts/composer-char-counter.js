@@ -4,17 +4,16 @@ $(document).ready(function() {
   // let = Number(count);
   // console.log(count);
 
-  $("#tweet-text").on("keyup", function(){
+  $("#tweet-text").on("keyup", function() {
     let output = $(this).next().children("output");
     let currentCount = this.value.length;
-    let total = 140 - currentCount
-    if(total < 0){
-      output.val(total)
-      output.css("color","red")
+    let total = 140 - currentCount;
+    if (total < 0) {
+      output.val(total);
+      output.css("color","red");
+    } else {
+      output.css("color","black");
+      output.val(total);
     }
-    else {
-      output.css("color","black")
-      output.val(total)
-    }
-  })
+  });
 });
