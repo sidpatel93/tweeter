@@ -17,8 +17,8 @@
 .tweets-section article header div{
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  flex-basis: 15%;
+  justify-content: space-around;
+  flex-basis: 25%;
   align-items: center;
   margin: 0.5em;
 }
