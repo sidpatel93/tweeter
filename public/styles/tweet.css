@@ -2,6 +2,7 @@
   margin-top: 2em;
   margin-bottom: 1em;
   border: solid black 4px;
+  background-color: white;
 }
 
 
@@ -42,8 +43,8 @@
 .tweets-section article footer div{
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  flex-basis: 8%;
+  justify-content: space-around;
+  flex-basis: 22%;
   align-items: center;
   margin: 0.5em;
 }
