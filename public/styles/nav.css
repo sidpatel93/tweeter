@@ -45,3 +45,8 @@ nav {
   margin-right: 1.5em;
 }
 
+@media screen and (min-width: 1024px){
+  nav {
+    background-color: #4152a1;
+  }
+}

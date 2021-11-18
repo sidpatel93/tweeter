@@ -24,6 +24,7 @@
 }
 
 .tweets-section article header span{
+  margin-left: 0.5em;
   margin-right: 1em;
 }
 
@@ -56,7 +57,7 @@
 }
 
 .tweets-section article footer div i:hover{
-  color: #eba134 ;
+  color: red ;
   cursor: pointer;
 }
 

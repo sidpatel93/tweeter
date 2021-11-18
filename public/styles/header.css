@@ -10,10 +10,27 @@
   background-image: url(../images/dark-tire.png) ;
 }
 
+.main-header > div > img {
+  margin-top: 1em;
+}
+
 .nametitle {
-  margin: 0 0 0 0;
+  margin: 0 0 1em 0;
   color: white;
 }
 
+@media screen and (min-width: 1024px){
+  .main-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    width: 30%;
+    height: auto;
+    margin-top: 10em;
+    margin-left: 2em;
+  }
+}
 
 

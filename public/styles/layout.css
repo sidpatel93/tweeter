@@ -15,6 +15,7 @@ html {
  */
 
 body {
+  
   color: #545149;
   background-color: #E9F5D8;
   font-family: 'Source Sans Pro', sans-serif;
@@ -34,5 +35,17 @@ body {
    flex-basis: 100%;
    width: 90%;
  }
+
+ @media screen and (min-width: 1024px){
+  .container {
+    float: right;
+    width: 50%;
+    height: auto;
+    margin-top: 7em;
+    margin-right: 2em;
+    
+  }
+}
+
 
  
