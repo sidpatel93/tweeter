@@ -22,7 +22,7 @@ $(document).ready(function() {
       <span>${handle}</span>
     </header>
     <div>
-      <p>${escape(content)}</p>
+      <p><strong>${escape(content)}</strong></p>
     </div>
     <footer>
       <span> ${timeago.format(date)}</span>
@@ -52,7 +52,7 @@ $(document).ready(function() {
       url: "/tweets"
     })
     .then(function(data){
-      $('.tweets-section').empty()
+      $('.tweets-section').empty();
       renderTweets(data);
     })
   }
@@ -61,18 +61,19 @@ $(document).ready(function() {
     
   $(".new-tweet form").submit(function(event){
     event.preventDefault()
-    var textarea = $('#tweet-text')
-    var form = $('.new-tweet form')
+    var textarea = $('#tweet-text');
+    var outputCount = $('#tweet-text').next().children("output");
+    var form = $('.new-tweet form');
     var errorDiv = $(".error");
 
     if(textarea.val().length > 140) {
-      errorDiv.html("<p> ⚠ Charater count exceed the max limit of 140 characters. ⚠ </p>")
-      errorDiv.show()
+      errorDiv.html("<p> ⚠ Charater count exceed the max limit of 140 characters. ⚠ </p>");
+      errorDiv.show();
     }
 
     else if(textarea.val().length === 0) {
-      errorDiv.html("<p> ⚠ Text field can not be empty. ⚠ </p>")
-      errorDiv.show()
+      errorDiv.html("<p> ⚠ Text field can not be empty. ⚠ </p>");
+      errorDiv.show();
     }
 
     else {
@@ -87,6 +88,8 @@ $(document).ready(function() {
       })    
       }
       textarea.val('');
+      outputCount.val(140)
+
     }
   )
 
@@ -94,8 +97,8 @@ $(document).ready(function() {
     var errorDiv = $(".error");
     errorDiv.hide();
     let output = $(this).next().children("output");
-    output.val(140)
-    output.css("color","black")
+    output.val(140);
+    output.css("color","black");
   })
 
   const escape = function(userInput) {
@@ -103,5 +106,10 @@ $(document).ready(function() {
     div.appendChild(document.createTextNode(userInput));
     return div.innerHTML;
   }
+
+  $('.navicon').on('click', function(){
+    var form = $(".new-tweet form");
+    form.show();
+  })
 
 })

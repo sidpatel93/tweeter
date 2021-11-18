@@ -31,6 +31,7 @@
 .tweets-section article > div {
   margin: 0.5em;
   border-bottom: solid black 4px;
+  overflow-wrap: break-word;
 }
 
 .tweets-section article footer{
@@ -69,4 +70,8 @@
 .error p {
   font-weight: 300;
   color: red;
+}
+
+.tweets-section article:hover {
+  box-shadow: 0 0.5em 0.5em 0 #565656 ; 
 }
