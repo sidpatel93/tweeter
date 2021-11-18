@@ -85,7 +85,7 @@ $(document).ready(function() {
     }
     textarea.val('');
     outputCount.val(140);
-
+    outputCount.css("color","black");
   }
   );
 
